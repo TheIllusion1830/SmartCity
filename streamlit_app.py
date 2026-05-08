@@ -529,7 +529,7 @@ tab_traffic, tab_parking, tab_about = st.tabs([
 # ─────────────────────────── TAB 1: TRAFFIC ──────────────────────────────────
 with tab_traffic:
     st.markdown(
-        "### Urban Traffic Speed Forecasting — DCRNN\n"
+        "### Urban Traffic Speed Forecasting — GMAN\n"
         "Select a Los Angeles highway sensor and get speed forecasts at "
         "**+15 min, +30 min, and +60 min** horizons."
     )
@@ -554,13 +554,13 @@ with tab_traffic:
         )
         predict_traffic_btn = st.button("🔮 Predict Traffic Speed", key="traffic_btn")
         st.caption(
-            "Uses **DCRNN_Lite** trained on **METR-LA**  \n"
+            "Uses **GMAN** trained on **METR-LA**  \n"
             "(207 sensors, 4 months of LA freeway data)"
         )
 
     with col_out:
         if predict_traffic_btn:
-            with st.spinner("Running DCRNN inference…"):
+            with st.spinner("Running GMAN inference…"):
                 fig, cur, s15, s30, s60, mlabel = run_traffic_prediction(
                     t_sensor, t_hour, t_day
                 )
@@ -682,7 +682,7 @@ This demo showcases a **two-module deep learning system** built for smart-city a
 | Item | Detail |
 |------|--------|
 | **Dataset** | METR-LA — 207 loop-detector sensors on LA freeways, 4 months |
-| **Model** | DCRNN_Lite (Diffusion-Convolutional RNN) |
+| **Model** | GMAN (Graph Multi Attention Network |
 | **Architecture** | Graph diffusion on directed adjacency + GRU encoder + autoregressive 12-step decoder |
 | **Output** | 12-step (60-min) speed forecast per sensor |
 | **Reference** | Li et al., *ICLR 2018* |
