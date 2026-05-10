@@ -333,9 +333,9 @@ The notebook contains:
 |-------|-----------|------------|----------|---------------|
 | Historical Average | 4.87 | 7.24 | 9.8 | - |
 | ARIMA | 4.12 | 6.53 | 8.4 | Fast |
-| *DCRNN (Ours)* | *3.47* | *5.82* | *7.1* | 15 min/epoch |
+| *DCRNN (Baseline)* | *3.47* | *5.82* | *7.1* | 15 min/epoch |
 | GraphWaveNet | 3.52 | 5.89 | 7.3 | 18 min/epoch |
-| GMAN | 3.41 | 5.76 | 6.9 | 25 min/epoch |
+| GMAN (Model) | 3.41 | 5.76 | 6.9 | 25 min/epoch |
 
 **Prediction Horizon Analysis:**
 - 15-min ahead: 2.8 mph MAE
