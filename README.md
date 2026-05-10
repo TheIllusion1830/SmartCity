@@ -43,7 +43,7 @@ Automated parking occupancy detection from camera images using deep CNNs with LS
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **Model References**: Implementation of DCRNN, GMAN, GraphWaveNet, and custom ParkNet-LSTM
 - **Comprehensive Analysis**: Detailed performance comparisons across multiple metrics (MAE, RMSE, MAPE)
