@@ -7,7 +7,7 @@ A comprehensive implementation of state-of-the-art graph neural networks and com
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Key Features](#-key-features)
@@ -23,7 +23,7 @@ A comprehensive implementation of state-of-the-art graph neural networks and com
 
 ---
 
-## 🎯 Overview
+## Overview and Insight
 
 This project addresses two critical smart city challenges:
 
@@ -45,16 +45,16 @@ Automated parking occupancy detection from camera images using deep CNNs with LS
 
 ## ✨ Key Features
 
-- **🚀 State-of-the-Art Models**: Implementation of DCRNN, GMAN, GraphWaveNet, and custom ParkNet-LSTM
-- **📊 Comprehensive Analysis**: Detailed performance comparisons across multiple metrics (MAE, RMSE, MAPE)
-- **🎨 Rich Visualizations**: Interactive plots for predictions, error analysis, and model comparisons
-- **🌐 Web Demo**: Flask-based interactive application with real-time predictions
-- **📈 Scalable Architecture**: Efficient implementations optimized for large-scale sensor networks
-- **🔧 Production-Ready**: Complete training pipeline, evaluation scripts, and deployment code
+- **Model References**: Implementation of DCRNN, GMAN, GraphWaveNet, and custom ParkNet-LSTM
+- **Comprehensive Analysis**: Detailed performance comparisons across multiple metrics (MAE, RMSE, MAPE)
+- **Rich Visualizations**: Interactive plots for predictions, error analysis, and model comparisons
+- **Web Demo**: Flask-based interactive application with real-time predictions
+- **Scalable Architecture**: Efficient implementations optimized for large-scale sensor networks
+- **Production-Ready**: Complete training pipeline, evaluation scripts, and deployment code
 
 ---
 
-## 🧠 Models Implemented
+## Models Implemented
 
 ### Traffic Prediction Models
 
@@ -159,7 +159,7 @@ smart-city-deep-learning/
 
 ---
 
-## 🔧 Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -202,7 +202,7 @@ flask>=2.3.0
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Training Traffic Models
 
@@ -280,7 +280,7 @@ The notebook contains:
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 ### 1. METR-LA Traffic Dataset
 
@@ -325,7 +325,7 @@ The notebook contains:
 
 ---
 
-## 📈 Results
+## RESULTS
 
 ### Traffic Prediction Performance
 
@@ -364,7 +364,7 @@ The notebook contains:
 
 ---
 
-## 🌐 Demo Application
+## Demo Application
 
 ### Quick Start
 
@@ -433,7 +433,7 @@ Parking Dashboard:
 
 ---
 
-## 👥 Team
+## TEAM
 
 **BITS Pilani, Dubai Campus**
 
@@ -448,7 +448,7 @@ Parking Dashboard:
 
 ---
 
-## 📚 References
+## References
 
 ### Traffic Forecasting
 
@@ -471,13 +471,7 @@ Parking Dashboard:
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - METR-LA dataset provided by Los Angeles Department of Transportation
 - PKLot dataset from Federal University of Paraná
@@ -487,7 +481,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 
-## 🔮 Future Work
+## Future Work
 
 - [ ] Integrate real-time data streaming
 - [ ] Deploy on cloud infrastructure (AWS/GCP)
