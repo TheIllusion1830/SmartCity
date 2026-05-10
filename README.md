@@ -390,24 +390,6 @@ Then open your browser to: `http://localhost:5000`
 - Detection confidence scores
 - Occupancy trends
 
-### API Endpoints
-
-```python
-# Get traffic prediction
-POST /api/traffic/predict
-{
-  "sensor_id": 100
-}
-
-# Get parking status
-POST /api/parking/predict
-{
-  "lot_name": "PUCPR"
-}
-
-# Get system statistics
-GET /api/stats
-```
 
 ### Screenshots
 
