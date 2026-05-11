@@ -38,7 +38,7 @@ import streamlit as st
 # ──────────────────────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Smart City AI",
-    page_icon="🌆",
+    page_icon="🚗",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -292,7 +292,7 @@ def _infer_slot(model, img_pil):
     with torch.no_grad():
         logits = model(tensor)
         probs  = F.softmax(logits, dim=1)[0].cpu().numpy()
-    label = "Occupied 🚗" if probs[1] > probs[0] else "Vacant ✅"
+    label = "Occupied 🔴" if probs[1] > probs[0] else "Vacant 🟢"
     return label, float(max(probs)), probs
 
 
@@ -412,13 +412,13 @@ def run_parking_prediction(lot_name: str, uploaded_image, hour: int):
         label_ma, conf_ma, _ = _infer_slot(malexnet_model, img_pil)
     else:
         occ_demo = (8 <= hour <= 18)
-        label_ma, conf_ma = ("Occupied 🚗" if occ_demo else "Vacant ✅", 0.92)
+        label_ma, conf_ma = ("Occupied 🔴" if occ_demo else "Vacant 🟢", 0.92)
 
     if MODEL_FLAGS["parknet"]:
         label_pn, conf_pn, _ = _infer_slot(parknet_model, img_pil)
     else:
         occ_demo = (8 <= hour <= 18)
-        label_pn, conf_pn = ("Occupied 🚗" if occ_demo else "Vacant ✅", 0.95)
+        label_pn, conf_pn = ("Occupied 🔴" if occ_demo else "Vacant 🟢", 0.95)
 
     peak_occ = 0.92 if (8 <= hour <= 18) else 0.30
     rng      = np.random.default_rng(lot_info["id"].__hash__() % 2**31 + hour)
@@ -507,11 +507,11 @@ st.markdown("""
 all_loaded = all([MODEL_FLAGS["dcrnn"], MODEL_FLAGS["malexnet"],
                   MODEL_FLAGS["parknet"], MODEL_FLAGS["assets"]])
 if all_loaded:
-    st.success("✅ All trained model files loaded — running full deep learning inference.")
+    st.success("All trained model files loaded — running full deep learning inference.")
 else:
     missing = [k for k, v in MODEL_FLAGS.items() if not v]
     st.warning(
-        f"⚠️ Model file(s) not found: **{', '.join(missing)}**. "
+        f" Model file(s) not found: **{', '.join(missing)}**. "
         "Predictions will use heuristic fallback. "
         "Upload the `.pth` and `.pkl` files alongside this script to enable real inference."
     )
@@ -520,9 +520,9 @@ now_hour = datetime.datetime.now().hour
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
 tab_traffic, tab_parking, tab_about = st.tabs([
-    "🚗  Traffic Speed Prediction",
-    "🅿️  Smart Parking Detection",
-    "ℹ️  About",
+    " Traffic Speed Prediction",
+    " Smart Parking Detection",
+    " About",
 ])
 
 
@@ -538,17 +538,17 @@ with tab_traffic:
 
     with col_ctrl:
         t_sensor = st.selectbox(
-            "🛣️ Highway / Sensor",
+            "Highway / Sensor",
             options=list(SENSORS.keys()),
             index=0,
         )
         t_hour = st.slider(
-            "🕐 Hour of Day",
+            "Hour of Day",
             min_value=0, max_value=23, value=now_hour, step=1,
             help="0 = midnight · 8 = morning rush · 17 = evening rush",
         )
         t_day = st.radio(
-            "📅 Day Type",
+            "Day Type",
             options=["Weekday", "Weekend"],
             horizontal=True,
         )
@@ -587,7 +587,7 @@ with tab_traffic:
             )
             st.caption(f"*Model: {mlabel}*")
         else:
-            st.info("👈 Configure the sensor and hit **Predict Traffic Speed** to see results.")
+            st.info("Configure the sensor and hit **Predict Traffic Speed** to see results.")
 
 
 # ─────────────────────────── TAB 2: PARKING ──────────────────────────────────
@@ -602,16 +602,16 @@ with tab_parking:
 
     with col_ctrl2:
         p_lot = st.selectbox(
-            "🏢 Select Parking Lot",
+            "Select Parking Lot",
             options=list(PARKING_LOTS.keys()),
             index=0,
         )
         p_hour = st.slider(
-            "🕐 Current Hour",
+            "Current Hour",
             min_value=0, max_value=23, value=now_hour, step=1,
         )
         uploaded_file = st.file_uploader(
-            "📷 Upload Parking Slot Image (optional)",
+            "Upload Parking Slot Image (optional)",
             type=["jpg", "jpeg", "png"],
             help="Upload a single parking slot crop. Leave blank for a synthetic demo."
         )
@@ -661,11 +661,11 @@ with tab_parking:
 
             if not used_real:
                 st.info(
-                    "💡 No image was uploaded — predictions above used a **synthetic demo slot**. "
+                    "No image was uploaded — predictions above used a **synthetic demo slot**. "
                     "Upload a real parking-slot crop to get a live classification."
                 )
         else:
-            st.info("👈 Configure the lot and hit **Analyse Parking** to see results.")
+            st.info("Configure the lot and hit **Analyse Parking** to see results.")
 
 
 # ─────────────────────────── TAB 3: ABOUT ────────────────────────────────────
@@ -677,7 +677,7 @@ This demo showcases a **two-module deep learning system** built for smart-city a
 
 ---
 
-### 🚗 Module 1 · Traffic Speed Prediction
+### Module 1 · Traffic Speed Prediction
 
 | Item | Detail |
 |------|--------|
@@ -693,7 +693,7 @@ Two charts are returned — a timeline and a multi-horizon bar.
 
 ---
 
-### 🅿️ Module 2 · Smart Parking Detection
+### Module 2 · Smart Parking Detection
 
 | Item | Detail |
 |------|--------|
@@ -708,7 +708,7 @@ curve are generated to show city-scale availability.
 
 ---
 
-### 👨‍💻 Team
+### Team
 
 Ishan Rajesh · Jonathan Sam · Kishore Pramodh · Kritin Murkoth  
 **BITS Pilani, Dubai Campus** — Deep Learning Course Project
