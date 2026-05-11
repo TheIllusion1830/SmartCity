@@ -718,7 +718,7 @@ Deep Learning Project
 # ── Footer ─────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div style="text-align:center; margin-top:24px; color:#555; font-size:12px;">
-  Smart City Deep Learning Project &nbsp;·&nbsp;
+  Smart City Deep AI &nbsp;·&nbsp;
   Jonathan Sam · Ishan Rajesh · Kishore Pramodh · Kritin Murkoth<br>
   Deep Learning Project
 </div>
