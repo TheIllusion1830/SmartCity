@@ -495,10 +495,10 @@ st.markdown("""
 <div style="text-align:center; padding:20px 0 12px;
             background:linear-gradient(135deg,#0f3460 0%,#533483 100%);
             border-radius:14px; margin-bottom:16px;">
-  <h1 style="color:white; margin:0; font-size:2.2rem;">🌆 Smart City AI</h1>
+  <h1 style="color:white; margin:0; font-size:2.2rem;">Smart City AI</h1>
   <p style="color:#ccc; margin:6px 0 0; font-size:1rem;">
-    Deep Learning · Traffic Speed Prediction &amp; Smart Parking Detection<br>
-    <small>BITS Pilani Dubai Campus — Deep Learning Project</small>
+    Traffic Speed Prediction &amp; Smart Parking Detection<br>
+    <small>Deep Learning Project</small>
   </p>
 </div>
 """, unsafe_allow_html=True)
@@ -552,7 +552,7 @@ with tab_traffic:
             options=["Weekday", "Weekend"],
             horizontal=True,
         )
-        predict_traffic_btn = st.button("🔮 Predict Traffic Speed", key="traffic_btn")
+        predict_traffic_btn = st.button("Predict Traffic Speed", key="traffic_btn")
         st.caption(
             "Uses **GMAN** trained on **METR-LA**  \n"
             "(207 sensors, 4 months of LA freeway data)"
@@ -623,7 +623,7 @@ with tab_parking:
             uploaded_img_np = np.array(pil_img)
             st.image(pil_img, caption="Uploaded slot image", use_container_width=True)
 
-        predict_parking_btn = st.button("🔍 Analyse Parking", key="parking_btn")
+        predict_parking_btn = st.button("Analyse Parking", key="parking_btn")
         st.caption(
             "Uses **mAlexNet** and **ParkNet-LSTM** trained on **PKLot**  \n"
             "(695,899 slot patches, 3 lots, multi-weather)"
@@ -644,7 +644,7 @@ with tab_parking:
             used_note = ("your uploaded image" if used_real
                          else "synthetic demo slot — upload a real image for live prediction")
 
-            st.markdown(f"### 🅿️ {lot_info['id']} Lot — {p_hour:02d}:00")
+            st.markdown(f"### {lot_info['id']} Lot — {p_hour:02d}:00")
 
             m1, m2, m3 = st.columns(3)
             m1.metric("🔴 Occupied", f"{n_occ} / {lot_info['total']}", f"{occ_rate*100:.0f}%")
@@ -671,7 +671,7 @@ with tab_parking:
 # ─────────────────────────── TAB 3: ABOUT ────────────────────────────────────
 with tab_about:
     st.markdown("""
-## 🌆 Smart City AI — Project Overview
+## Smart City AI — Project Overview
 
 This demo showcases a **two-module deep learning system** built for smart-city applications.
 
@@ -710,8 +710,8 @@ curve are generated to show city-scale availability.
 
 ### Team
 
-Ishan Rajesh · Jonathan Sam · Kishore Pramodh · Kritin Murkoth  
-**BITS Pilani, Dubai Campus** — Deep Learning Course Project
+Jonathan Sam · Ishan Rajesh · Kishore Pramodh · Kritin Murkoth  
+Deep Learning Project
 """)
 
 
@@ -719,7 +719,7 @@ Ishan Rajesh · Jonathan Sam · Kishore Pramodh · Kritin Murkoth
 st.markdown("""
 <div style="text-align:center; margin-top:24px; color:#555; font-size:12px;">
   Smart City Deep Learning Project &nbsp;·&nbsp;
-  Ishan Rajesh · Jonathan Sam · Kishore Pramodh · Kritin Murkoth<br>
-  BITS Pilani, Dubai Campus
+  Jonathan Sam · Ishan Rajesh · Kishore Pramodh · Kritin Murkoth<br>
+  Deep Learning Project
 </div>
 """, unsafe_allow_html=True)
