@@ -1,4 +1,3 @@
-# SmartCity
 # Smart City Deep Learning: Traffic Prediction & Parking Detection
 
 > **Advanced deep learning models for urban traffic forecasting and intelligent parking management**
