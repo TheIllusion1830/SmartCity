@@ -1,5 +1,5 @@
 # SmartCity
-# 🌆 Smart City Deep Learning: Traffic Prediction & Parking Detection
+# Smart City Deep Learning: Traffic Prediction & Parking Detection
 
 > **Advanced deep learning models for urban traffic forecasting and intelligent parking management**
 
@@ -122,7 +122,7 @@ CNN Feature Extractor → Spatial Attention → LSTM Sequence → FC Classifier
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 smart-city-deep-learning/
@@ -356,11 +356,11 @@ The notebook contains:
 
 ### Key Insights
 
-✅ **DCRNN outperforms baseline by 9.7%** in traffic prediction MAE  
-✅ **ParkNet-LSTM achieves 92.5% accuracy** with strong cross-lot generalization  
-✅ **Attention mechanisms** (GMAN) provide marginal improvements with higher complexity  
-✅ **Graph structure is crucial** - random graphs degrade performance by 15%  
-✅ **LSTM integration** in parking model improves temporal consistency  
+ **DCRNN outperforms baseline by 9.7%** in traffic prediction MAE  
+ **ParkNet-LSTM achieves 92.5% accuracy** with strong cross-lot generalization  
+ **Attention mechanisms** (GMAN) provide marginal improvements with higher complexity  
+ **Graph structure is crucial** - random graphs degrade performance by 15%  
+ **LSTM integration** in parking model improves temporal consistency  
 
 ---
 
